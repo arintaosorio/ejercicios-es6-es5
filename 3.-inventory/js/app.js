@@ -15,22 +15,37 @@ const inventory = [
   { name: "Ciruela", category: "fruit", stock: "8" }
 ];
 
-var totalByCategory = function(inventory, category) {
-  var filterCategory = function filterCategory(prod) {
-    var totalProd = prod.category === category;
+// var totalByCategory = function(inventory, category) {
+//   var filterCategory = function filterCategory(prod) {
+//     var totalProd = prod.category === category;
+//     return totalProd;
+//   };
+//   var sumInventory = function sumInventory(prodAnterior, prodActual) {
+//     var base = prodAnterior + parseInt(prodActual.stock, 10);
+//     return base;
+//   };
+//   var filtrando = inventory.filter(filterCategory).reduce(sumInventory, 0);
+//   console.log(filtrando);
+//   return filtrando;
+// };
+
+// totalByCategory(inventory, "beverage");
+
+
+// Comenta todo el código de arriba (ecepto la const inventory) y pasa el código a ES6
+
+const totalByCategory = (inventory, category) => {
+  const filterCategory = prod => {
+    const totalProd = prod.category === category;
     return totalProd;
-  };
-  var sumInventory = function sumInventory(prodAnterior, prodActual) {
-    var base = prodAnterior + parseInt(prodActual.stock, 10);
+  }
+  const sumInventory = function sumInventory(prodAnterior, prodActual) {
+    const base = prodAnterior + parseInt(prodActual.stock, 10);
     return base;
   };
-  var filtrando = inventory.filter(filterCategory).reduce(sumInventory, 0);
+  const filtrando = inventory.filter(filterCategory).reduce(sumInventory, 0);
   console.log(filtrando);
   return filtrando;
 };
 
 totalByCategory(inventory, "beverage");
-
-
-// Comenta todo el código de arriba (ecepto la const inventory) y pasa el código a ES6
-
