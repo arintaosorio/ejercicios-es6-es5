@@ -2,7 +2,7 @@
 Declara la variable
 Escribe tu funcion
 function average(numbers){
-    var total = eval(numbers.join('+')) / numbers.length;
+    var total = eval(numbers.join('+')) / numbers.length; //EVAL es para indicarle que es una opecación aritmética(solución squad 6)
     console.log('El promedio de este arreglo es: ' + total)
     return total;
 }
